@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run clean && npm run html | npm run css | npm run rest",
     "clean": "rm -rf ./public",
-    "css": "cleancss -o public/styles.css src/styles.css",
+    "css": "cleancss --skip-rebase -o public/styles.css src/styles.css",
     "html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --remove-attribute-quotes --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype --output-dir public/ --input-dir src/ --file-ext html",
     "rest": "rsync --exclude *.html --exclude *.css ./src/* public/",
     "test": "echo \"Error: no test specified\" && exit 1"
