@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  -webkit-align-items: center;
+  background-color: #D90368;
+  background-image: url("escheresque.png");
+  color: #FFF;
+  display: flex;
+  display: -webkit-flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  justify-content: center;
+  -webkit-justify-content: center;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+header {
+  margin-bottom: 21px;
+}
+
+a {
+  color: #FFF;
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  text-decoration: none;
+}
