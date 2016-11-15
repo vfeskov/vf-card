@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run html | npm run css | npm run rest",
+    "build": "npm run clean && (npm run html | npm run css | npm run rest)",
     "clean": "rm -rf ./public",
-    "css": "cleancss --skip-rebase -o public/styles.css src/styles.css",
-    "html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --remove-attribute-quotes --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype --output-dir public/ --input-dir src/ --file-ext html",
+    "css": "cleancss --skip-rebase -o public/styles.css src/styles.css && ./node_modules/gzip-js/bin/gzip.js --level 9 --file public/styles.css --output public/styles.css",
+    "html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --remove-attribute-quotes --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype -o public/index.html src/index.html && ./node_modules/gzip-js/bin/gzip.js --level 9 --file public/index.html --o public/index.html",
     "rest": "rsync --exclude *.html --exclude *.css ./src/* public/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "clean-css": "^3.4.20",
-    "html-minifier": "^3.1.1"
+    "gzip-js": "^0.3.2",
+    "html-minifier": "^3.1.1",
+    "optimist": "^0.6.1"
   }
 }
