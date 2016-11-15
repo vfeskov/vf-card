@@ -17,16 +17,24 @@ body {
   color: #b21877;
   display: flex;
   display: -webkit-flex;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-family: Arial, serif;
+  font-size: 4vw;
   justify-content: center;
   -webkit-justify-content: center;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
 
+h1 {
+  margin: 0 0 0.1em;
+}
+
+p {
+  margin: 0;
+}
+
 header {
-  margin-bottom: 21px;
+  margin-bottom: 1.33em;
 }
 
 a {
