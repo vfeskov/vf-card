@@ -4,23 +4,19 @@ body {
 }
 
 body {
-  align-items: center;
-  -webkit-align-items: center;
   background: rgba(255,255,255,1);
   background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(224,224,224,1) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(224,224,224,1)));
   background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(224,224,224,1) 100%);
   background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(224,224,224,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(224,224,224,1) 100%);
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(224,224,224,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0', GradientType=1 );
   color: #b21877;
-  display: flex;
   display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   font-family: Arial, serif;
   font-size: 5vw;
-  justify-content: center;
-  -webkit-justify-content: center;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -35,26 +31,43 @@ p {
 }
 
 header {
-  margin-bottom: 1.33em;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 a {
   color: inherit;
   display: block;
   min-height: 44px;
+  min-width: 44px;
   line-height: 44px;
+  text-align: center;
   text-decoration: none;
 }
 
-nav {
-  bottom: 1em;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  left: 2em;
+a:nth-child(2) {
+  left: 50%;
   position: absolute;
-  right: 2em;
+  top: 0;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0 2em 1em;
+  position: relative;
 }
